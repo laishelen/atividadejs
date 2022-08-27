@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+</head>
+<body>
+
+    <h5>Sistema de Notas</h5>
+  
+    <label for="nota">
+        Digite o valor da nota: 
+    </label>
+      
+    <input type="number" id="nota" 
+        placeholder="nota">
+    <br><br>
+
+    <label id="resposta"></label><br>
+  
+    <button id="calcular">Clique aqui</button>
+
+
+    <script type="text/javascript">
+        const btn = document.querySelector("#calcular");
+        const nota_campo = document.querySelector("#nota");
+
+        btn.onclick = () => {            
+            var nota = nota_campo.value;
+
+            if(nota <0 || nota > 100) {
+                resposta.innerHTML = "Nota fora do limite";
+            } else {
+                if(nota <38) {
+                    resposta.innerHTML = "Reprovado";
+                } else {
+                    if(5-nota%5 < 3) {
+                        nota = parseInt(nota) +parseInt(5-nota%5);
+                    } 
+                    
+                    resposta.innerHTML = nota;
+                }
+            }
+                    
+            
+        }
+    </script>
+</body>
+</html>
